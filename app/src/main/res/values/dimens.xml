@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="peekHeightBottomSheet">100dp</dimen>
+    <dimen name="widthViewBottomSheet">25dp</dimen>
+    <dimen name="heightViewBottomSheet">1dp</dimen>
+    <dimen name="marginTopViewBottomSheet">5dp</dimen>
+    <dimen name="marginTopTextViewBottomSheet">5dp</dimen>
+    <dimen name="paddingStartTextViewBottomSheet">10dp</dimen>
+    <dimen name="paddingEndTextViewBottomSheet">10dp</dimen>
+    <dimen name="tvPaddingTop">16dp</dimen>
+    <dimen name="tvPaddingStart">6dp</dimen>
+    <dimen name="tvPaddingEnd">6dp</dimen>
+    <dimen name="marginBottomViewBottomSheet">50dp</dimen>
+</resources>

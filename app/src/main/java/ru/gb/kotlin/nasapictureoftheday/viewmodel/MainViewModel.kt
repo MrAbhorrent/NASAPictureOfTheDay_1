@@ -1,4 +1,4 @@
-package ru.gb.kotlin.nasapictureoftheday.ui.main
+package ru.gb.kotlin.nasapictureoftheday.viewmodel
 
 import androidx.lifecycle.ViewModel
 
