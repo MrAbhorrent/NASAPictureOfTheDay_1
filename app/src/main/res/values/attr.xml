@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="counterEnabledApp" format="reference"/>
+    <attr name="counterMaxLengthApp" format="reference"/>
+
+    <attr name="themeColorPrimary" format="reference"/>
+    <attr name="themeColorPrimaryDark" format="reference"/>
+    <attr name="themeColorAccent" format="reference"/>
+
+</resources>

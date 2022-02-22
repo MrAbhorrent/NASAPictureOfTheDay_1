@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="chipChoice" parent="@style/Widget.MaterialComponents.Chip.Choice">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/marginStartChoice</item>
+        <item name="android:layout_marginEnd">@dimen/marginEndChoice</item>
+    </style>
+
+    <style name="chipEntry" parent="@style/Widget.MaterialComponents.Chip.Entry">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="LocalTextInputLayoutOutlineBox" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:inputType">text</item>
+        <item name="android:paddingStart">@dimen/tvPaddingStart</item>
+        <item name="android:paddingTop">@dimen/tvPaddingTop</item>
+        <item name="android:paddingEnd">@dimen/tvPaddingEnd</item>
+    </style>
+
+    <style name="AppShapeAppearance.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerSize">@dimen/roundCornerSize</item>
+    </style>
+
+    <style name="AppShapeAppearance.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamilyTopLeft">cut</item>
+        <item name="cornerFamilyBottomRight">cut</item>
+        <item name="cornerSize">@dimen/cutCornerSize</item>
+    </style>
+
+
+    <style name="AppLinearLayoutCustom">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/linearLayoutMarginTop</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="CardMediumShape" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamilyTopLeft">cut</item>
+        <item name="cornerFamilyBottomRight">cut</item>
+        <item name="cornerSize">@dimen/cardCornerSize</item>
+    </style>
+
+    <style name="AppCard" parent="Widget.MaterialComponents.CardView">
+        <item name="shapeAppearance">@style/CardMediumShape</item>
+        <item name="cardElevation">@dimen/cardElevation</item>
+        <item name="backgroundTint">@color/cardview_custom_background</item>
+    </style>
+
+
+</resources>

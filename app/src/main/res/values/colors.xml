@@ -7,4 +7,23 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="color_gray">#66000000</color>
+    <color name="colorBackgroundLayoutBottomSheet">#A6F6FF</color>
+    <color name="colorBackgroundViewBottomSheet">#663b4351</color>
+    <color name="colorTextTextViewBottomSheet">#000</color>
+    <color name="chipTextColor">#757575</color>
+    <color name="cardview_custom_background">#EBE7E7</color>
+
+    <color name="colorPrimaryTheme2">#e91e63</color>
+    <color name="colorPrimaryDarkTheme2">#b0003a</color>
+    <color name="colorAccentTheme2">#ff6090</color>
+
+    <color name="colorPrimaryTheme3">#009688</color>
+    <color name="colorPrimaryDarkTheme3">#00796B</color>
+    <color name="colorAccentTheme3">#80CBC4</color>
 </resources>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingTop="@dimen/tvPaddingTop">
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroupTheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/paddingStartTextViewBottomSheet"
+        android:paddingEnd="@dimen/paddingEndTextViewBottomSheet"
+        app:chipSpacingVertical="@dimen/chipSpacingBetween"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            style="@style/chipChoice"
+            android:id="@+id/chipGroupTheme1"
+            android:layout_width="match_parent"
+            android:text="@string/textChipTheme1"
+            android:textAlignment="center"
+            app:checkedIconEnabled="true" />
+
+        <com.google.android.material.chip.Chip
+            style="@style/chipChoice"
+            android:id="@+id/chipGroupTheme2"
+            android:layout_width="match_parent"
+            android:textAlignment="center"
+            android:text="@string/textChipTheme2"
+            app:checkedIconEnabled="true" />
+
+        <com.google.android.material.chip.Chip
+            style="@style/chipChoice"
+            android:id="@+id/chipGroupTheme3"
+            android:layout_width="match_parent"
+            android:text="@string/textChipTheme3"
+            android:textAlignment="center"
+            app:checkedIconEnabled="true" />
+    </com.google.android.material.chip.ChipGroup>
+</androidx.constraintlayout.widget.ConstraintLayout>

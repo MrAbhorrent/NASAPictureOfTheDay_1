@@ -1,12 +1,12 @@
 package ru.gb.kotlin.nasapictureoftheday.ui.main
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import ru.gb.kotlin.nasapictureoftheday.R
+import ru.gb.kotlin.nasapictureoftheday.viewmodel.MainViewModel
 
 class MainFragment : Fragment() {
 
@@ -25,7 +25,7 @@ class MainFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+        //viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         // TODO: Use the ViewModel
     }
 
