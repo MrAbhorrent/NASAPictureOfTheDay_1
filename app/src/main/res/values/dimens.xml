@@ -3,7 +3,7 @@
     <dimen name="peekHeightBottomSheet">100dp</dimen>
     <dimen name="widthViewBottomSheet">25dp</dimen>
     <dimen name="heightViewBottomSheet">1dp</dimen>
-    <dimen name="marginTopViewBottomSheet">5dp</dimen>
+    <dimen name="marginTopViewBottomSheet">32dp</dimen>
     <dimen name="marginTopTextViewBottomSheet">5dp</dimen>
     <dimen name="paddingStartTextViewBottomSheet">10dp</dimen>
     <dimen name="paddingEndTextViewBottomSheet">10dp</dimen>
@@ -11,4 +11,16 @@
     <dimen name="tvPaddingStart">6dp</dimen>
     <dimen name="tvPaddingEnd">6dp</dimen>
     <dimen name="marginBottomViewBottomSheet">50dp</dimen>
+    <dimen name="chipSpacingBetween">24dp</dimen>
+    <dimen name="marginStartChoice">6dp</dimen>
+    <dimen name="marginEndChoice">6dp</dimen>
+    <dimen name="roundCornerSize">6dp</dimen>
+    <dimen name="cutCornerSize">8dp</dimen>
+    <dimen name="linearLayoutMarginTop">16dp</dimen>
+    <dimen name="marginTextView">6dp</dimen>
+    <dimen name="chipMarginTop">18dp</dimen>
+    <dimen name="tvTextSize">18sp</dimen>
+    <dimen name="chipSpacingHorizontalCustom">12dp</dimen>
+    <dimen name="cardCornerSize">12dp</dimen>
+    <dimen name="cardElevation">8dp</dimen>
 </resources>

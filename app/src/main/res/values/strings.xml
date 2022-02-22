@@ -8,4 +8,25 @@
     <string name="search">Поиск</string>
     <string name="selectScreenOne">На экран 1</string>
     <string name="selectScreenTwo">На экран 2</string>
+    <string name="textChipToday">Сегодня</string>
+    <string name="textChipYesterday">Вчера</string>
+    <string name="textChipTwoDaysAgo">Позавчера</string>
+    <string name="txtNameChipEntry">Entry</string>
+    <string name="txtNameChipChoice">Choice</string>
+    <string name="txtNameChipAction">Action</string>
+    <string name="txtNameChipFilter">Filter</string>
+    <string name="txtNameChipGroupItem1">Choice A</string>
+    <string name="txtNameChipGroupItem2">Choice B</string>
+    <string name="txtNameChipGroupItem3">Choice C</string>
+    <string name="txtNameBackgroundColor">Background Color</string>
+    <string name="txtNameRippleColor">Ripple Color</string>
+    <string name="txtNameChipDefault">Default</string>
+    <string name="txtNameChipIcon">Chip icon</string>
+    <string name="txtNameTextViewGroupChip">Choose One</string>
+    <string name="txtTitleTabLayoutItem1">Tab 1</string>
+    <string name="txtTitleTabLayoutItem2">Tab 2</string>
+    <string name="txtTitleTabLayoutItem3">Tab 3</string>
+    <string name="textChipTheme1">Тема 1</string>
+    <string name="textChipTheme2">Тема 2</string>
+    <string name="textChipTheme3">Тема 3</string>
 </resources>

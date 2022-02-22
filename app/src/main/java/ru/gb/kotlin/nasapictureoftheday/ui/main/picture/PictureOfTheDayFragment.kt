@@ -8,11 +8,11 @@ import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import coil.api.load
+import coil.load
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.chip.Chip
 import kotlinx.android.synthetic.main.bottom_sheet_layout.*
 import kotlinx.android.synthetic.main.main_fragment.*
 import ru.gb.kotlin.nasapictureoftheday.MainActivity
@@ -20,11 +20,17 @@ import ru.gb.kotlin.nasapictureoftheday.R
 import ru.gb.kotlin.nasapictureoftheday.model.PictureOfTheDayData
 import ru.gb.kotlin.nasapictureoftheday.ui.main.chips.ChipsFragment
 import ru.gb.kotlin.nasapictureoftheday.viewmodel.PictureOfTheDayViewModel
+import java.text.SimpleDateFormat
+import java.util.*
 
 class PictureOfTheDayFragment : Fragment() {
 
+    private val DATETIME_PATTERN = "yyyy-MM-dd"
+    private val DEFAULT_COUNTRY = "RU"
+    private val DEFAULT_LANGUAGE = "ru"
     private val TAG_MENU = "TAG_BOTTOM_MENU"
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
+    var selectedDay: String?  = null
 
     companion object {
         fun newInstance() = PictureOfTheDayFragment()
@@ -38,7 +44,7 @@ class PictureOfTheDayFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        //image_view = view?.findViewById(R.id.image_view)
+
         return inflater.inflate(R.layout.main_fragment, container, false)
     }
 
@@ -46,11 +52,12 @@ class PictureOfTheDayFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         viewModel = ViewModelProvider(this)[PictureOfTheDayViewModel::class.java]
-        viewModel.getData().observe(
-            this@PictureOfTheDayFragment,
-            Observer<PictureOfTheDayData> { data ->
-                renderData(data)
-            })
+        viewModel.liveDataForViewToObserve.observe(
+            this@PictureOfTheDayFragment
+        ) { data ->
+            renderData(data)
+        }
+        viewModel.getData(selectedDay)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -62,6 +69,22 @@ class PictureOfTheDayFragment : Fragment() {
             })
         }
         setBottomAppBar(view)
+
+        chipGroupDay.setOnCheckedChangeListener { _, position ->
+            chipGroupDay.findViewById<Chip>(position)?.let {
+                var delta = 0
+                when (it.text) {
+                    getString(R.string.textChipTwoDaysAgo) -> delta = 1
+                    getString(R.string.textChipYesterday) -> delta = 2
+                    getString(R.string.textChipToday) -> delta = 3
+                }
+                val calendar = Calendar.getInstance()
+                calendar.add(Calendar.DATE, -3 + delta)
+                selectedDay = getDateTimeFormat(calendar)
+                Toast.makeText(context, "Выбран ${it.text} \n $delta", Toast.LENGTH_SHORT).show()
+                viewModel.getData(selectedDay)
+            }
+        }
     }
 
     private fun renderData(data: PictureOfTheDayData) {
@@ -107,10 +130,17 @@ class PictureOfTheDayFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId) {
-            R.id.app_bar_fav -> toast(getString(R.string.favourite))
-            R.id.app_bar_settings -> {
+            R.id.app_bar_fav -> {
+                toast(getString(R.string.favourite))
                 activity?.supportFragmentManager?.beginTransaction()
                     ?.add(R.id.container, ChipsFragment())
+                    ?.addToBackStack(null)
+                    ?.commit()
+            }
+            R.id.app_bar_settings -> {
+                toast(getString(R.string.settings))
+                activity?.supportFragmentManager?.beginTransaction()
+                    ?.replace(R.id.container, SettingsFragment())
                     ?.addToBackStack(null)
                     ?.commit()
             }
@@ -152,4 +182,11 @@ class PictureOfTheDayFragment : Fragment() {
             show()
         }
     }
+
+    private fun getDateTimeFormat(chooseDate: Calendar): String? {
+
+        val sdf = SimpleDateFormat( DATETIME_PATTERN, Locale( DEFAULT_LANGUAGE, DEFAULT_COUNTRY))
+        return sdf.format(chooseDate.time)
+    }
+
 }

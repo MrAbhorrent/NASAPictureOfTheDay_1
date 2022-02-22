@@ -13,25 +13,27 @@ import ru.gb.kotlin.nasapictureoftheday.model.PODServerResponseData
 import ru.gb.kotlin.nasapictureoftheday.model.PictureOfTheDayData
 
 class PictureOfTheDayViewModel (
-    private val liveDataForViewToObserve: MutableLiveData<PictureOfTheDayData> = MutableLiveData(),
+    internal val liveDataForViewToObserve: MutableLiveData<PictureOfTheDayData> = MutableLiveData(),
     private val retrofitImpl: PODRetrofitImpl = PODRetrofitImpl()
     ) : ViewModel() {
 
-    fun getData(): LiveData<PictureOfTheDayData> {
+    //private val responseDataFromServer: LiveData<PictureOfTheDayData> = MutableLiveData()
 
-        sendServerRequest()
-        return liveDataForViewToObserve
+    fun getData(date: String?) {
+
+       sendServerRequest(date)
     }
 
-    private fun sendServerRequest() {
+    private fun sendServerRequest(date: String?) {
 
+        val queryDate: String? = date
         liveDataForViewToObserve.value = PictureOfTheDayData.Loading(null)
         val apiKey = BuildConfig.NASA_API_KEY
         if (apiKey.isBlank()) {
             PictureOfTheDayData.Error(Throwable("Can't working without api key"))
         } else {
 
-            retrofitImpl.getRetrofitImpl().getPictureOfTheDay(apiKey).enqueue( object : Callback<PODServerResponseData> {
+            retrofitImpl.getRetrofitImpl().getPictureOfTheDay(apiKey, queryDate).enqueue( object : Callback<PODServerResponseData> {
                 override fun onResponse(
                     call: Call<PODServerResponseData>,
                     response: Response<PODServerResponseData>

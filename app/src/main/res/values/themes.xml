@@ -12,5 +12,30 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+
+        <item name="shapeAppearanceSmallComponent">@style/AppShapeAppearance.SmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/AppShapeAppearance.MediumComponent</item>
+
+        <item name="materialCardViewStyle">@style/AppCard</item>
+
+    </style>
+
+    <style name="Theme.NASAPictureOfTheDay.Item2" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">?themeColorPrimary</item>
+        <item name="colorPrimaryDark">?themeColorPrimaryDark</item>
+        <item name="colorAccent">?themeColorAccent</item>
+        <item name="themeColorPrimary">@color/colorPrimaryTheme2</item>
+        <item name="themeColorPrimaryDark">@color/colorPrimaryDarkTheme2</item>
+        <item name="themeColorAccent">@color/colorAccentTheme2</item>
+    </style>
+
+    <style name="Theme.NASAPictureOfTheDay.Item3" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">?themeColorPrimary</item>
+        <item name="colorPrimaryDark">?themeColorPrimaryDark</item>
+        <item name="colorAccent">?themeColorAccent</item>
+        <item name="themeColorPrimary">@color/colorPrimaryTheme3</item>
+        <item name="themeColorPrimaryDark">@color/colorPrimaryDarkTheme3</item>
+        <item name="themeColorAccent">@color/colorAccentTheme3</item>
     </style>
 </resources>

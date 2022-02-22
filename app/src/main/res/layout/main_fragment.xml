@@ -1,34 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_anchor="@+id/main"
+        app:layout_anchorGravity="center">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/input_layout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            style="@style/LocalTextInputLayoutOutlineBox"
             android:hint="@string/search_wiki"
-            android:paddingTop="@dimen/tvPaddingTop"
-            android:paddingStart="@dimen/tvPaddingStart"
-            android:paddingEnd="@dimen/tvPaddingEnd"
-            android:inputType="textPassword"
             app:counterEnabled="true"
             app:counterMaxLength="20"
             app:endIconCheckable="true"
             app:endIconDrawable="@drawable/ic_wikipedia"
             app:endIconMode="custom"
             app:helperText="@string/wiki_helper_text"
-            app:layout_constraintBottom_toTopOf="@+id/image_view"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/input_edit_text"
@@ -39,18 +35,52 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroupDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:chipSpacingHorizontal="@dimen/chipSpacingBetween"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="@dimen/marginTopViewBottomSheet"
+            android:layout_marginEnd="@dimen/marginTopViewBottomSheet"
+            app:layout_constraintTop_toBottomOf="@+id/input_layout"
+            android:paddingEnd="@dimen/paddingStartTextViewBottomSheet"
+            android:paddingStart="@dimen/paddingStartTextViewBottomSheet"
+            app:singleLine="true"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipTwoDaysAgo"
+                style="@style/chipChoice"
+                app:checkedIconEnabled="true"
+                android:text="@string/textChipTwoDaysAgo" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipYesterday"
+                style="@style/chipChoice"
+                app:checkedIconEnabled="true"
+                android:text="@string/textChipYesterday" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipToday"
+                style="@style/chipChoice"
+                app:checkedIconEnabled="true"
+                android:text="@string/textChipToday" />
+
+        </com.google.android.material.chip.ChipGroup>
+
         <ru.gb.kotlin.nasapictureoftheday.util.EquilateralImageView
             android:id="@+id/image_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="0dp"
             android:layout_marginBottom="@dimen/marginTopViewBottomSheet"
             android:contentDescription="@string/photo_of_the_day_stub"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chipGroupDay"
             app:srcCompat="@drawable/ic_no_photo_vector" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
